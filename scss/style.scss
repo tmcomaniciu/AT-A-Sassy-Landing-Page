@@ -1,15 +1,14 @@
 // Variables (assuming these are defined in your _config.scss)
 $font-stack: 'Trebuchet MS', Arial, sans-serif;
-$light-color: #FFC300; // This is the yellow color we see in the background
-$primary-color: #000814; // Assuming this is the dark color used for text and other elements
-$secondary-color: #00A6FB; // You may want to adjust this based on the secondary color in the design
+$light-color: #FFC300; 
+$primary-color: #000814; 
+$secondary-color: #00A6FB; 
 
-// Import other SCSS files if needed
 @import 'utilities';
 @import 'config';
 @import 'btnConfig';
 
-// Reset and base styles
+//base styles
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,34 +18,34 @@ $secondary-color: #00A6FB; // You may want to adjust this based on the secondary
 body {
   background-color: $light-color;
   font-family: $font-stack;
-  line-height: 1.6; // You can adjust this as needed for better readability
-  color: text-color-picker($light-color); // Using the function from _utilities.scss to set text color
+  line-height: 1.6; 
+  color: text-color-picker($light-color);
 }
 
 img {
   border-radius: 50%;
-  width: 500px; // Adjust as needed to match design
-  height: auto; // Keep aspect ratio
+  width: 500px; 
+  height: auto; 
 }
 
 a {
   text-decoration: none;
-  color: inherit; // Links will inherit the text color from their parent elements
+  color: inherit;
 }
 
-// Header and main content area
+// Header
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center; // Center align the text
-  padding: 4rem 2rem; // Add some padding around the content
+  text-align: center; 
+  padding: 4rem 2rem; 
   color: text-color-picker($primary-color);
 
   .banner {
-    font-size: 2rem; // Adjust as needed
-    margin-bottom: 2rem; // Add some space below the header
+    font-size: 2rem; 
+    margin-bottom: 2rem; 
   }
 
   nav ul {
@@ -69,16 +68,16 @@ a {
   .hero-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; // Space out the text and image
+    justify-content: space-between; 
     align-items: center;
-    margin-top: 3rem; // Space from the navigation
+    margin-top: 3rem;
     
     div {
-      max-width: 600px; // Adjust as needed
+      max-width: 600px;
     }
     
     img {
-      // Styles for the image
+      
       max-width: 100%;
       height: auto;
       border-radius: 50%;
@@ -86,34 +85,33 @@ a {
   }
 
   h1 {
-    font-size: 4rem; // Large font size for the main heading
+    font-size: 4rem; 
     color: text-color-picker($primary-color);
-    margin: 0.5rem 0; // Adjust spacing as needed
+    margin: 0.5rem 0;
   }
 
   p {
-  margin: 1rem 0; // Spacing for paragraphs
+  margin: 1rem 0;
   }
   }
   
   // Button styles
   .btn-primary {
-  @include set-bg(lighten($primary-color, 10%)); // Lighten the primary color for the button background
+  @include set-bg(lighten($primary-color, 10%));
   }
   
   .btn-secondary {
   @include set-bg($secondary-color);
   }
   
-  // Hover effect for buttons
+  // buttons
   %btn {
   &:hover {
-  transform: scale(1.1); // Change scale to 1.1 for a hover effect that enlarges the button
-  transition: transform 0.3s ease-in-out; // Smooth transition for the hover effect
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out; 
   }
   }
   
-  // Apply the hover effect to all buttons
   .btn-primary, .btn-secondary {
   @extend %btn;
   }
